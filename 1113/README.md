@@ -32,22 +32,21 @@ For each case, print in a line two numbers: $$|n_1 - n_2|$$ and $$|S_1 - S_2|$$,
 ```
 
 ```cpp
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 using namespace std;
 int main() {
-    int n, sum = 0, halfsum = 0;
-    scanf("%d", &n);
-    vector<int> v(n);
-    for(int i = 0; i < n; i++) {
-        scanf("%d", &v[i]);
-        sum += v[i];
-    }
-    sort(v.begin(), v.end());
-    for(int i = 0; i < n / 2; i++)
-        halfsum += v[i];
-    printf("%d %d", n % 2, sum - 2 * halfsum);
-    return 0;
+  int n, sum = 0, halfsum = 0;
+  scanf("%d", &n);
+  vector<int> v(n);
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &v[i]);
+    sum += v[i];
+  }
+  sort(v.begin(), v.end());
+  for (int i = 0; i < n / 2; i++) halfsum += v[i];
+  printf("%d %d", n % 2, sum - 2 * halfsum);
+  return 0;
 }
 ```
